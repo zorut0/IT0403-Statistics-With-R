@@ -1,0 +1,7 @@
+df <- data.frame(Name = c("Alice", "Bob", "Charlie", "David"), 
+                  Age = c(17, 25, 15, 30))
+
+df$Status <- ifelse(df$Age >= 18, "Adult", "Minor")
+
+cat("Updated Data Frame with Status Column:\n")
+print(df)
