@@ -1,0 +1,19 @@
+df <- data.frame(X1 = c(1, 2, 3, 4),
+                  X2 = c("Alice", "Bob", "Charlie", "David"),
+                  X3 = c(25, NA, 45, 40))
+colnames(df) <- c("ID", "Name", "Age")
+cat("Data Frame After Renaming Columns:\n")
+print(df)
+mean_age <- mean(df$Age, na.rm = TRUE) 
+df$Age[is.na(df$Age)] <- mean_age
+cat("\nData Frame After Replacing Missing Age Values with Mean:\n")
+print(df)
+df_sorted <- df[order(-df$Age), ]
+cat("\nData Frame Sorted by Age in Descending Order:\n")
+print(df_sorted)
+df_no_id <- df_sorted[, -which(colnames(df_sorted) == "ID")]
+cat("\nData Frame After Removing ID Column:\n")
+print(df_no_id)
+df_subset <- subset(df_no_id, Age >= 40)
+cat("\nSubset of Data Where Age is Greater Than or Equal to 40:\n")
+print(df_subset)
