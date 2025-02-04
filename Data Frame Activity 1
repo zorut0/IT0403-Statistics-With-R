@@ -1,0 +1,10 @@
+df1 <- data.frame(Name = c("Alice", "Bob"), Age = c(25, 30))
+df2 <- data.frame(Name = c("Charlie", "David"), Age = c(35, 40))
+
+df_vertical <- rbind(df1, df2)
+cat("Vertically Concatenated Data Frame:\n")
+print(df_vertical)
+
+df_horizontal <- cbind(df1, df2)
+cat("\nHorizontally Concatenated Data Frame:\n")
+print(df_horizontal)
